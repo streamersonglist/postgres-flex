@@ -16,7 +16,7 @@ jobs:
     permissions:
       contents: read
       packages: write
-      
+
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -52,8 +52,8 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            streamersonglist/postgres-flex:16
-            streamersonglist/postgres-flex:16.1
+            ghcr.io/streamersonglist/postgres-flex:16
+            ghcr.io/streamersonglist/postgres-flex:16.1
 
       - name: Postgres 16 Image digest
         run: echo ${{ steps.docker_build_16.outputs.digest }}
