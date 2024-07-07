@@ -45,7 +45,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           build-args: |
-            PG_VERSION=16.2
+            PG_VERSION=16.3
             PG_MAJOR_VERSION=16
             VERSION=${{ steps.get-latest-tag.outputs.tag }}
           context: .
@@ -53,7 +53,7 @@ jobs:
           push: true
           tags: |
             ghcr.io/streamersonglist/postgres-flex:16
-            ghcr.io/streamersonglist/postgres-flex:16.2
+            ghcr.io/streamersonglist/postgres-flex:16.3
 
       - name: Postgres 16 Image digest
         run: echo ${{ steps.docker_build_16.outputs.digest }}
