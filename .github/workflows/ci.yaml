@@ -54,6 +54,7 @@ jobs:
           tags: |
             ghcr.io/streamersonglist/postgres-flex:16
             ghcr.io/streamersonglist/postgres-flex:16.3
+            ghcr.io/streamersonglist/postgres-flex:${{ steps.get-latest-tag.outputs.tag }}
 
       - name: Postgres 16 Image digest
         run: echo ${{ steps.docker_build_16.outputs.digest }}
