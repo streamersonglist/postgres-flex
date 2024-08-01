@@ -48,6 +48,9 @@ RUN curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmo
         postgresql-client-${PG_MAJOR_VERSION} \
         postgresql-contrib-${PG_MAJOR_VERSION}
 
+# pg_cron
+RUN apt-get -y install postgresql-16-cron && apt clean
+
 # Repmgr
 RUN curl -L http://launchpadlibrarian.net/722514158/postgresql-${PG_MAJOR_VERSION}-repmgr_${REPMGR_VERSION}_amd64.deb -o postgresql-${PG_MAJOR_VERSION}-repmgr_${REPMGR_VERSION}_amd64.deb && \
     apt-get install -y ./postgresql-${PG_MAJOR_VERSION}-repmgr_${REPMGR_VERSION}_amd64.deb \
